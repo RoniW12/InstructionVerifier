@@ -1,0 +1,48 @@
+# Generation settings. Every value here is recorded with each generated row.
+seed: 20261120
+
+records_per_drug: 10
+versions_per_record: 8
+
+# Optional fields: probability that a record includes the field when its card has it.
+# strength, dose_amount, frequency and duration are always included when the card has them.
+optional_field_p:
+  food_timing: 0.7
+  administration: 0.6
+  interactions: 0.6
+  warning_signs: 0.8
+  missed_dose: 0.6
+  max_daily: 0.5
+
+# Patient spec sampling (see the data generation plan, stage 3).
+ops:
+  filled: {keep: 0.45, delete: 0.25, change: 0.18, blur: 0.12}
+  add_p_per_empty_field: 0.15
+  min_mentioned: 2
+  max_changed: 3
+  fully_correct_share: 0.10
+noise:
+  n_choices: [0, 1, 2]
+  n_weights: [0.4, 0.4, 0.2]
+  operators: [distractor, filler, self_correction, question_back, other_medication, shuffled_order, transcript]
+
+# Equivalence decisions (see "Decisions needed" in the plan).
+equivalence:
+  tid_equals_q8h: true      # "three times a day" counts as "every 8 hours"
+
+models:
+  generator:
+    base_url: null          # null = api.openai.com
+    model: gpt-4o-mini      # placeholder; set the model you choose
+    api_key_env: OPENAI_API_KEY
+    temperature: 0.9
+  verifier:
+    base_url: http://localhost:8080/v1   # e.g. llama.cpp llama-server on your PC (OpenAI-compatible)
+    model: local-verifier
+    api_key_env: VERIFIER_API_KEY        # any string for llama.cpp
+    temperature: 0.0
+  # The B1/B2 judge is configured later, in the baseline code. It must be a third family.
+
+pilot:
+  records_per_drug: 2
+  versions_per_record: 5

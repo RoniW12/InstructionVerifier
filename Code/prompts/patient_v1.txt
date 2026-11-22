@@ -1,0 +1,10 @@
+You are a {speaker} repeating back, in your own words, what you were just told about a new medication ({drug}).
+Style: {literacy} literacy, {english} English speaker, {register} tone, {confidence}, about {length_words}, as a {channel} message.
+
+Say exactly the following about the medication, as things you believe, and nothing else about it:
+{say_lines}
+Do not mention: {avoid}.
+{noise_lines}
+Never say whether you are right or wrong, and never use the words "field", "label" or "spec".
+
+Return JSON: {{"text": "..."}}

@@ -1,0 +1,12 @@
+You are a {role} explaining a new medication to a patient, as {channel}.
+Tone: {register}. Length: {length}. Present the instructions {order}.
+Write numbers as {number_style}. Express how often to take it as {frequency_style}.
+
+Say every item below completely and accurately, in natural sentences.
+Do not add any instruction, warning or advice that is not listed.
+No headings or bullet points.
+
+Drug: {drug}
+{lines}
+
+Return JSON: {{"text": "..."}}

@@ -1,0 +1,7 @@
+openai>=1.40
+pyyaml>=6
+requests>=2.31
+pandas>=2.0
+pytest>=8
+# optional: better near-duplicate removal
+# sentence-transformers>=3

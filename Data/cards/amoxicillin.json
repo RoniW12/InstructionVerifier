@@ -1,0 +1,94 @@
+{
+ "drug": "amoxicillin",
+ "class": "antibiotics",
+ "status": "draft",
+ "note": "DRAFT from the openFDA label text by Claude. Check every value and source before use; values marked CHECK are not stated in the label.",
+ "label": {
+  "set_id": "05b9b595-05d9-469f-82a3-c2bc94c50be2",
+  "effective_time": "20261112",
+  "generic_name": "AMOXICILLIN",
+  "product": "Amoxicillin Tablets USP, 875 mg"
+ },
+ "products": [
+  {
+   "strength": {
+    "value": 875,
+    "unit": "mg"
+   },
+   "form": "tablet",
+   "source": "3 Dosage forms and strengths"
+  }
+ ],
+ "regimens": [
+  {
+   "name": "adult, severe or lower respiratory tract infection",
+   "source": "2.2 Table 1: 875 mg every 12 hours",
+   "strength": {
+    "value": 875,
+    "unit": "mg"
+   },
+   "dose_amount": {
+    "count": 1,
+    "form": "tablet"
+   },
+   "frequency": {
+    "every_hours": 12
+   },
+   "durations": [
+    {
+     "kind": "days",
+     "n": 10,
+     "finish_course": true,
+     "source": "2.2: at least 10 days for S. pyogenes; 17: complete the full course"
+    },
+    {
+     "kind": "days",
+     "n": 7,
+     "finish_course": true,
+     "source": "CHECK: prescriber choice, not stated in the label"
+    }
+   ]
+  }
+ ],
+ "food_timing": {
+  "value": {
+   "tags": [
+    "start_of_meal"
+   ]
+  },
+  "source": "2.1: taken at the start of a meal"
+ },
+ "administration": null,
+ "interactions": null,
+ "warning_signs": {
+  "value": {
+   "groups": [
+    {
+     "symptoms": [
+      "skin rash",
+      "sores in the mouth or other mucous membranes",
+      "other signs of an allergic reaction"
+     ],
+     "action": "stop_and_report"
+    },
+    {
+     "symptoms": [
+      "watery or bloody diarrhea",
+      "stomach cramps",
+      "fever"
+     ],
+     "action": "call_doctor_soon"
+    }
+   ]
+  },
+  "source": "17 Patient counseling: SCAR (stop immediately and report); Diarrhea (contact physician as soon as possible)"
+ },
+ "missed_dose": null,
+ "max_daily": {
+  "value": {
+   "value": 1750,
+   "unit": "mg"
+  },
+  "source": "2 Highlights: adults 750 to 1750 mg/day"
+ }
+}

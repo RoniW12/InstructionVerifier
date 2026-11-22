@@ -1,0 +1,195 @@
+{
+ "drug": "omeprazole",
+ "class": "gi_thyroid_bone",
+ "status": "draft",
+ "note": "DRAFT from the openFDA label text by Claude. Check every value and source before use; values marked CHECK are not stated in the label.",
+ "label": {
+  "set_id": "062800b1-790a-41c3-a8be-94143d2c7fb6",
+  "effective_time": "20260801",
+  "generic_name": "OMEPRAZOLE",
+  "product": "Omeprazole Delayed-Release Capsules USP"
+ },
+ "products": [
+  {
+   "strength": {
+    "value": 10,
+    "unit": "mg"
+   },
+   "form": "capsule",
+   "source": "3 Dosage forms and strengths"
+  },
+  {
+   "strength": {
+    "value": 20,
+    "unit": "mg"
+   },
+   "form": "capsule",
+   "source": "3 Dosage forms and strengths"
+  }
+ ],
+ "regimens": [
+  {
+   "name": "active duodenal ulcer",
+   "source": "2.1 Table 1: 20 mg once daily, 4 weeks",
+   "strength": {
+    "value": 20,
+    "unit": "mg"
+   },
+   "dose_amount": {
+    "count": 1,
+    "form": "capsule"
+   },
+   "frequency": {
+    "per_day": 1
+   },
+   "durations": [
+    {
+     "kind": "weeks",
+     "n": 4,
+     "source": "2.1 Table 1"
+    }
+   ]
+  },
+  {
+   "name": "heartburn from GERD",
+   "source": "2.1 Table 1: 20 mg once daily, up to 4 weeks",
+   "strength": {
+    "value": 20,
+    "unit": "mg"
+   },
+   "dose_amount": {
+    "count": 1,
+    "form": "capsule"
+   },
+   "frequency": {
+    "per_day": 1
+   },
+   "durations": [
+    {
+     "kind": "weeks",
+     "n": 4,
+     "source": "2.1 Table 1"
+    }
+   ]
+  },
+  {
+   "name": "erosive esophagitis",
+   "source": "2.1 Table 1: 20 mg once daily, 4 to 8 weeks",
+   "strength": {
+    "value": 20,
+    "unit": "mg"
+   },
+   "dose_amount": {
+    "count": 1,
+    "form": "capsule"
+   },
+   "frequency": {
+    "per_day": 1
+   },
+   "durations": [
+    {
+     "kind": "weeks",
+     "n": 4,
+     "source": "2.1 Table 1"
+    },
+    {
+     "kind": "weeks",
+     "n": 8,
+     "source": "2.1 Table 1"
+    }
+   ]
+  },
+  {
+   "name": "benign gastric ulcer, 40 mg as two 20 mg capsules",
+   "source": "2.1 Table 1: 40 mg once daily, 4 to 8 weeks; CHECK: given as 2 x 20 mg",
+   "strength": {
+    "value": 20,
+    "unit": "mg"
+   },
+   "dose_amount": {
+    "count": 2,
+    "form": "capsule"
+   },
+   "frequency": {
+    "per_day": 1
+   },
+   "durations": [
+    {
+     "kind": "weeks",
+     "n": 4,
+     "source": "2.1 Table 1"
+    },
+    {
+     "kind": "weeks",
+     "n": 8,
+     "source": "2.1 Table 1"
+    }
+   ]
+  }
+ ],
+ "food_timing": {
+  "value": {
+   "tags": [
+    "before_meal"
+   ]
+  },
+  "source": "Medication Guide: take before a meal"
+ },
+ "administration": {
+  "value": {
+   "tags": [
+    "swallow_whole",
+    "do_not_chew_or_crush",
+    "may_sprinkle_on_applesauce"
+   ]
+  },
+  "source": "Medication Guide: swallow whole, do not chew or crush; may open and sprinkle on applesauce"
+ },
+ "interactions": {
+  "value": {
+   "items": [
+    {
+     "agent": "antacids",
+     "rule": "ok"
+    }
+   ]
+  },
+  "source": "Medication Guide: antacids may be taken with omeprazole"
+ },
+ "warning_signs": {
+  "value": {
+   "groups": [
+    {
+     "symptoms": [
+      "passing less urine than usual",
+      "blood in the urine"
+     ],
+     "action": "call_doctor_now"
+    },
+    {
+     "symptoms": [
+      "watery stool",
+      "stomach pain",
+      "fever that does not go away"
+     ],
+     "action": "call_doctor_now"
+    },
+    {
+     "symptoms": [
+      "blistering, peeling or bleeding skin"
+     ],
+     "action": "stop_and_call_doctor_now"
+    }
+   ]
+  },
+  "source": "Medication Guide: kidney problems; C. difficile diarrhea; severe skin reactions"
+ },
+ "missed_dose": {
+  "value": {
+   "tag": "take_when_remembered_skip_if_close",
+   "no_double": true
+  },
+  "source": "Medication Guide: missed dose"
+ },
+ "max_daily": null
+}
