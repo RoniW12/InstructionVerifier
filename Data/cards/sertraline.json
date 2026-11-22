@@ -1,0 +1,159 @@
+{
+ "drug": "sertraline",
+ "class": "mental_health_neuro",
+ "status": "draft",
+ "note": "DRAFT from the openFDA label text by Claude. Check every value and source before use; values marked CHECK are not stated in the label.",
+ "label": {
+  "set_id": "0e5a7b02-3972-47f0-9f49-e958d792beac",
+  "effective_time": "20261029",
+  "generic_name": "SERTRALINE HYDROCHLORIDE",
+  "product": "Sertraline Hydrochloride Tablets USP"
+ },
+ "products": [
+  {
+   "strength": {
+    "value": 25,
+    "unit": "mg"
+   },
+   "form": "tablet",
+   "source": "3 Dosage forms and strengths"
+  },
+  {
+   "strength": {
+    "value": 50,
+    "unit": "mg"
+   },
+   "form": "tablet",
+   "source": "3 Dosage forms and strengths"
+  },
+  {
+   "strength": {
+    "value": 100,
+    "unit": "mg"
+   },
+   "form": "tablet",
+   "source": "3 Dosage forms and strengths"
+  }
+ ],
+ "regimens": [
+  {
+   "name": "depression, starting dose",
+   "source": "2.1 Table 1: MDD 50 mg per day",
+   "strength": {
+    "value": 50,
+    "unit": "mg"
+   },
+   "dose_amount": {
+    "count": 1,
+    "form": "tablet"
+   },
+   "frequency": {
+    "per_day": 1
+   },
+   "durations": [
+    {
+     "kind": "ongoing",
+     "dont_stop_suddenly": true,
+     "source": "2.6: reduce dose gradually when stopping"
+    }
+   ]
+  },
+  {
+   "name": "panic disorder, PTSD or social anxiety, starting dose",
+   "source": "2.1 Table 1: 25 mg per day",
+   "strength": {
+    "value": 25,
+    "unit": "mg"
+   },
+   "dose_amount": {
+    "count": 1,
+    "form": "tablet"
+   },
+   "frequency": {
+    "per_day": 1
+   },
+   "durations": [
+    {
+     "kind": "ongoing",
+     "dont_stop_suddenly": true,
+     "source": "2.6"
+    }
+   ]
+  },
+  {
+   "name": "depression, after a dose increase",
+   "source": "2.1 Table 1: therapeutic range 50 to 200 mg",
+   "strength": {
+    "value": 100,
+    "unit": "mg"
+   },
+   "dose_amount": {
+    "count": 1,
+    "form": "tablet"
+   },
+   "frequency": {
+    "per_day": 1
+   },
+   "durations": [
+    {
+     "kind": "ongoing",
+     "dont_stop_suddenly": true,
+     "source": "2.6"
+    }
+   ]
+  }
+ ],
+ "food_timing": {
+  "value": {
+   "tags": [
+    "with_or_without_food"
+   ]
+  },
+  "source": "Medication Guide: may be taken with or without food"
+ },
+ "administration": null,
+ "interactions": {
+  "value": {
+   "items": [
+    {
+     "agent": "alcohol",
+     "rule": "avoid"
+    },
+    {
+     "agent": "nsaids_or_aspirin",
+     "rule": "tell_doctor"
+    }
+   ]
+  },
+  "source": "Medication Guide: do not drink alcohol; 7.1: bleeding risk with aspirin and NSAIDs (CHECK the Medication Guide wording)"
+ },
+ "warning_signs": {
+  "value": {
+   "groups": [
+    {
+     "symptoms": [
+      "new or worse depression",
+      "thoughts about suicide",
+      "feeling agitated, restless, angry or irritable"
+     ],
+     "action": "call_doctor_or_911"
+    }
+   ]
+  },
+  "source": "Medication Guide: call your healthcare provider right away, or 911 in an emergency"
+ },
+ "missed_dose": {
+  "value": {
+   "tag": "take_when_remembered_skip_if_close",
+   "no_double": true
+  },
+  "source": "Medication Guide: missed dose"
+ },
+ "max_daily": {
+  "value": {
+   "value": 200,
+   "unit": "mg"
+  },
+  "source": "2.1: maximum 200 mg per day"
+ }
+}

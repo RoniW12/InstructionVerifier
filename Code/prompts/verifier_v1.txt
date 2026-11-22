@@ -1,0 +1,23 @@
+You read what someone said about a medication and record, for each topic, what they said.
+Only record what the text actually says. Do not use medical knowledge to fill gaps.
+
+For each topic return {{"status": S, "value": V}}:
+- S = "not_mentioned" if the text says nothing about the topic (V = null)
+- S = "vague" if the text mentions the topic only vaguely, with no usable value (V = null)
+- S = "stated" if the text gives a value; V uses the format shown
+
+Topics and formats:
+{field_docs}
+
+Allowed tags:
+- food_timing tags: {food_tags}
+- administration tags: {admin_tags}
+- interaction agents: {agents}; rules: {rules}
+- warning actions: {actions} (use null if no action is given)
+- missed_dose tags: {missed_tags}
+For warning_signs, copy the symptoms as short phrases from the text.
+
+Text:
+"""{text}"""
+
+Return JSON with exactly these keys: {keys}

@@ -1,0 +1,52 @@
+# 40 oral drugs, 8 classes. Split is by drug; two whole classes are held out (test_heldout).
+# openfda_names: exact openFDA generic names to search, in order of preference.
+# pilot: true marks the 5 pilot drugs (one per training class).
+drugs:
+  # Antibiotics
+  - {key: amoxicillin, class: antibiotics, split: train, pilot: true, openfda_names: ["AMOXICILLIN"]}
+  - {key: amoxicillin-clavulanate, class: antibiotics, split: train, openfda_names: ["AMOXICILLIN AND CLAVULANATE POTASSIUM"]}
+  - {key: azithromycin, class: antibiotics, split: train, openfda_names: ["AZITHROMYCIN", "AZITHROMYCIN DIHYDRATE", "AZITHROMYCIN MONOHYDRATE"]}
+  - {key: ciprofloxacin, class: antibiotics, split: val, openfda_names: ["CIPROFLOXACIN", "CIPROFLOXACIN HYDROCHLORIDE"]}
+  - {key: doxycycline, class: antibiotics, split: test_seen, openfda_names: ["DOXYCYCLINE HYCLATE", "DOXYCYCLINE", "DOXYCYCLINE MONOHYDRATE"]}
+  # Cardiovascular
+  - {key: lisinopril, class: cardiovascular, split: train, openfda_names: ["LISINOPRIL"]}
+  - {key: amlodipine, class: cardiovascular, split: train, openfda_names: ["AMLODIPINE BESYLATE"]}
+  - {key: metoprolol, class: cardiovascular, split: train, openfda_names: ["METOPROLOL SUCCINATE", "METOPROLOL TARTRATE"]}
+  - {key: atorvastatin, class: cardiovascular, split: val, openfda_names: ["ATORVASTATIN CALCIUM"]}
+  - {key: furosemide, class: cardiovascular, split: test_seen, openfda_names: ["FUROSEMIDE"]}
+  # Diabetes
+  - {key: metformin, class: diabetes, split: train, pilot: true, openfda_names: ["METFORMIN HYDROCHLORIDE"]}
+  - {key: glipizide, class: diabetes, split: train, openfda_names: ["GLIPIZIDE"]}
+  - {key: glimepiride, class: diabetes, split: train, openfda_names: ["GLIMEPIRIDE"]}
+  - {key: empagliflozin, class: diabetes, split: val, openfda_names: ["EMPAGLIFLOZIN"]}
+  - {key: sitagliptin, class: diabetes, split: test_seen, openfda_names: ["SITAGLIPTIN", "SITAGLIPTIN PHOSPHATE"]}
+  # Pain
+  - {key: ibuprofen, class: pain, split: train, pilot: true, openfda_names: ["IBUPROFEN"]}
+  - {key: naproxen, class: pain, split: train, openfda_names: ["NAPROXEN", "NAPROXEN SODIUM"]}
+  - {key: oxycodone, class: pain, split: train, openfda_names: ["OXYCODONE HYDROCHLORIDE"]}
+  - {key: tramadol, class: pain, split: val, openfda_names: ["TRAMADOL HYDROCHLORIDE"]}
+  - {key: acetaminophen, class: pain, split: test_seen, openfda_names: ["ACETAMINOPHEN"], note: "may only have OTC (Drug Facts) labels"}
+  # GI, thyroid, bone
+  - {key: omeprazole, class: gi_thyroid_bone, split: train, pilot: true, openfda_names: ["OMEPRAZOLE"]}
+  - {key: pantoprazole, class: gi_thyroid_bone, split: train, openfda_names: ["PANTOPRAZOLE SODIUM"]}
+  - {key: ondansetron, class: gi_thyroid_bone, split: train, openfda_names: ["ONDANSETRON", "ONDANSETRON HYDROCHLORIDE"]}
+  - {key: levothyroxine, class: gi_thyroid_bone, split: val, openfda_names: ["LEVOTHYROXINE SODIUM", "LEVOTHYROXINE"]}
+  - {key: alendronate, class: gi_thyroid_bone, split: test_seen, openfda_names: ["ALENDRONATE SODIUM"]}
+  # Mental health, neuro
+  - {key: sertraline, class: mental_health_neuro, split: train, pilot: true, openfda_names: ["SERTRALINE HYDROCHLORIDE", "SERTRALINE"]}
+  - {key: escitalopram, class: mental_health_neuro, split: train, openfda_names: ["ESCITALOPRAM OXALATE", "ESCITALOPRAM"]}
+  - {key: gabapentin, class: mental_health_neuro, split: train, openfda_names: ["GABAPENTIN"]}
+  - {key: trazodone, class: mental_health_neuro, split: val, openfda_names: ["TRAZODONE HYDROCHLORIDE"]}
+  - {key: levetiracetam, class: mental_health_neuro, split: test_seen, openfda_names: ["LEVETIRACETAM"]}
+  # Held out: anticoagulants, antiplatelets
+  - {key: warfarin, class: anticoagulants, split: test_heldout, openfda_names: ["WARFARIN SODIUM"]}
+  - {key: apixaban, class: anticoagulants, split: test_heldout, openfda_names: ["APIXABAN"]}
+  - {key: rivaroxaban, class: anticoagulants, split: test_heldout, openfda_names: ["RIVAROXABAN"]}
+  - {key: dabigatran, class: anticoagulants, split: test_heldout, openfda_names: ["DABIGATRAN ETEXILATE MESYLATE", "DABIGATRAN ETEXILATE"]}
+  - {key: clopidogrel, class: anticoagulants, split: test_heldout, openfda_names: ["CLOPIDOGREL BISULFATE", "CLOPIDOGREL"]}
+  # Held out: steroids, respiratory
+  - {key: prednisone, class: steroids_respiratory, split: test_heldout, openfda_names: ["PREDNISONE"]}
+  - {key: methylprednisolone, class: steroids_respiratory, split: test_heldout, openfda_names: ["METHYLPREDNISOLONE"]}
+  - {key: montelukast, class: steroids_respiratory, split: test_heldout, openfda_names: ["MONTELUKAST SODIUM"]}
+  - {key: cetirizine, class: steroids_respiratory, split: test_heldout, openfda_names: ["CETIRIZINE HYDROCHLORIDE"], note: "may only have OTC (Drug Facts) labels"}
+  - {key: benzonatate, class: steroids_respiratory, split: test_heldout, openfda_names: ["BENZONATATE"]}

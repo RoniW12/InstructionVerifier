@@ -1,0 +1,89 @@
+# TeachBack pilot on GitHub Actions: 5 drugs, 10 records, 50 patient texts.
+# Start it from the Actions tab: "TeachBack pilot" > "Run workflow".
+# Needs one repo secret, OPENAI_API_KEY (Settings > Secrets and variables > Actions).
+# The local verifier is not reachable from GitHub, so texts are generated unverified;
+# verify them later on a PC with the verifier running (see README).
+name: TeachBack pilot
+
+on:
+  workflow_dispatch:
+    inputs:
+      commit_results:
+        description: "Commit the outputs back to this branch"
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+
+concurrency:
+  group: teachback-pilot
+  cancel-in-progress: false
+
+jobs:
+  pilot:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      PYTHONUNBUFFERED: "1"
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: Code/requirements.txt
+
+      - name: Install
+        run: pip install -q -r Code/requirements.txt
+
+      - name: Check the key and the generator model
+        run: |
+          if [ -z "$OPENAI_API_KEY" ]; then
+            echo "::error::OPENAI_API_KEY secret is missing. Add it in Settings > Secrets and variables > Actions."
+            exit 1
+          fi
+          MODEL=$(python -c "import yaml; print(yaml.safe_load(open('Code/configs/gen.yaml'))['models']['generator']['model'])")
+          CODE=$(curl -s -o /dev/null -w '%{http_code}' -H "Authorization: Bearer $OPENAI_API_KEY" "https://api.openai.com/v1/models/$MODEL")
+          if [ "$CODE" != "200" ]; then
+            echo "::error::OpenAI does not accept the model '$MODEL' with this key (HTTP $CODE). Set models.generator.model in Code/configs/gen.yaml."
+            exit 1
+          fi
+          echo "Generator model OK: $MODEL"
+
+      - name: Tests
+        working-directory: Code
+        run: python -m pytest -q
+
+      - name: Sample records
+        working-directory: Code
+        run: python -m data_gen.sample_records --pilot
+
+      - name: Generate doctor and patient texts (unverified)
+        working-directory: Code
+        run: |
+          set -o pipefail
+          python -m data_gen.generate --pilot --no-verify 2>&1 | tee ../Data/pilot/run-actions.log
+
+      - name: Upload outputs (with call logs)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pilot-${{ github.run_number }}
+          path: |
+            Data/pilot
+            Results
+          if-no-files-found: warn
+
+      - name: Commit outputs back
+        if: success() && inputs.commit_results
+        continue-on-error: true
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add Data/pilot Results
+          if git diff --cached --quiet; then echo "Nothing new to commit."; exit 0; fi
+          git commit -m "Pilot outputs, unverified (run ${{ github.run_number }}) [skip ci]"
+          git push

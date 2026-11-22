@@ -1,0 +1,18 @@
+You build a "drug card" from FDA label sections for {drug}. Use only values stated in the sections below.
+For every value, give the section it came from in a "source" field. If something is not stated, use null.
+Prefer patient-facing wording (Medication Guide, patient information) for food, administration, warnings and missed doses.
+
+Card format (JSON):
+{card_format}
+
+Allowed tags:
+- food_timing tags: {food_tags}
+- administration tags: {admin_tags}
+- interaction agents: {agents}; rules: {rules}
+- warning actions: {actions}
+- missed_dose tags: {missed_tags}
+
+Label sections:
+{sections}
+
+Return JSON only: the card.

@@ -1,0 +1,160 @@
+{
+ "drug": "metformin",
+ "class": "diabetes",
+ "status": "draft",
+ "note": "DRAFT from the openFDA label text by Claude. Check every value and source before use; values marked CHECK are not stated in the label.",
+ "label": {
+  "set_id": "0230a3c3-34cf-478b-88c3-4d96e5300018",
+  "effective_time": "20261109",
+  "generic_name": "METFORMIN HYDROCHLORIDE",
+  "product": "Metformin Hydrochloride Tablets USP"
+ },
+ "products": [
+  {
+   "strength": {
+    "value": 500,
+    "unit": "mg"
+   },
+   "form": "tablet",
+   "source": "3 Dosage forms and strengths"
+  },
+  {
+   "strength": {
+    "value": 850,
+    "unit": "mg"
+   },
+   "form": "tablet",
+   "source": "3 Dosage forms and strengths"
+  },
+  {
+   "strength": {
+    "value": 1000,
+    "unit": "mg"
+   },
+   "form": "tablet",
+   "source": "3 Dosage forms and strengths"
+  }
+ ],
+ "regimens": [
+  {
+   "name": "adult starting dose, 500 mg twice a day",
+   "source": "2.1",
+   "strength": {
+    "value": 500,
+    "unit": "mg"
+   },
+   "dose_amount": {
+    "count": 1,
+    "form": "tablet"
+   },
+   "frequency": {
+    "per_day": 2
+   },
+   "durations": [
+    {
+     "kind": "ongoing",
+     "source": "chronic therapy"
+    }
+   ]
+  },
+  {
+   "name": "adult starting dose, 850 mg once a day",
+   "source": "2.1",
+   "strength": {
+    "value": 850,
+    "unit": "mg"
+   },
+   "dose_amount": {
+    "count": 1,
+    "form": "tablet"
+   },
+   "frequency": {
+    "per_day": 1
+   },
+   "durations": [
+    {
+     "kind": "ongoing",
+     "source": "chronic therapy"
+    }
+   ]
+  },
+  {
+   "name": "adult, 1,000 mg twice a day after titration",
+   "source": "2.1 titration up to 2,550 mg/day in divided doses; CHECK this maintenance example",
+   "strength": {
+    "value": 1000,
+    "unit": "mg"
+   },
+   "dose_amount": {
+    "count": 1,
+    "form": "tablet"
+   },
+   "frequency": {
+    "per_day": 2
+   },
+   "durations": [
+    {
+     "kind": "ongoing",
+     "source": "chronic therapy"
+    }
+   ]
+  }
+ ],
+ "food_timing": {
+  "value": {
+   "tags": [
+    "with_meals"
+   ]
+  },
+  "source": "2.1 and Medication Guide: take with meals"
+ },
+ "administration": {
+  "value": {
+   "tags": [
+    "swallow_whole"
+   ]
+  },
+  "source": "Medication Guide: swallow whole"
+ },
+ "interactions": {
+  "value": {
+   "items": [
+    {
+     "agent": "alcohol",
+     "rule": "avoid_heavy"
+    }
+   ]
+  },
+  "source": "Medication Guide: do not drink a lot of alcohol or binge drink"
+ },
+ "warning_signs": {
+  "value": {
+   "groups": [
+    {
+     "symptoms": [
+      "feeling very weak and tired",
+      "unusual muscle pain",
+      "trouble breathing",
+      "unusual sleepiness"
+     ],
+     "action": "stop_and_call_doctor_now"
+    }
+   ]
+  },
+  "source": "Medication Guide: lactic acidosis, stop and call your healthcare provider right away"
+ },
+ "missed_dose": {
+  "value": {
+   "tag": "skip_take_next",
+   "no_double": true
+  },
+  "source": "Medication Guide: take your next dose as prescribed; do not take an extra dose"
+ },
+ "max_daily": {
+  "value": {
+   "value": 2550,
+   "unit": "mg"
+  },
+  "source": "2.1: maximum 2,550 mg per day"
+ }
+}

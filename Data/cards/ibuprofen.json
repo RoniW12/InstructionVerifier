@@ -1,0 +1,162 @@
+{
+ "drug": "ibuprofen",
+ "class": "pain",
+ "status": "draft",
+ "note": "DRAFT from the openFDA label text by Claude. Check every value and source before use; values marked CHECK are not stated in the label.",
+ "label": {
+  "set_id": "0387bfaa-daca-48ec-b718-0216a848c16a",
+  "effective_time": "20260710",
+  "generic_name": "IBUPROFEN",
+  "product": "Ibuprofen Tablets USP, 400 mg"
+ },
+ "products": [
+  {
+   "strength": {
+    "value": 400,
+    "unit": "mg"
+   },
+   "form": "tablet",
+   "source": "How supplied"
+  },
+  {
+   "strength": {
+    "value": 600,
+    "unit": "mg"
+   },
+   "form": "tablet",
+   "source": "D&A names 600 mg; CHECK: not this label's product"
+  },
+  {
+   "strength": {
+    "value": 800,
+    "unit": "mg"
+   },
+   "form": "tablet",
+   "source": "D&A names 800 mg; CHECK: not this label's product"
+  }
+ ],
+ "regimens": [
+  {
+   "name": "mild to moderate pain",
+   "source": "D&A: 400 mg every 4 to 6 hours as necessary",
+   "strength": {
+    "value": 400,
+    "unit": "mg"
+   },
+   "dose_amount": {
+    "count": 1,
+    "form": "tablet"
+   },
+   "frequency": {
+    "every_hours": [
+     4,
+     6
+    ],
+    "as_needed": true
+   },
+   "durations": [
+    {
+     "kind": "as_short_as_possible",
+     "source": "Medication Guide: for the shortest time needed"
+    }
+   ]
+  },
+  {
+   "name": "osteoarthritis or rheumatoid arthritis, 600 mg",
+   "source": "D&A: 400, 600 or 800 mg three or four times a day",
+   "strength": {
+    "value": 600,
+    "unit": "mg"
+   },
+   "dose_amount": {
+    "count": 1,
+    "form": "tablet"
+   },
+   "frequency": {
+    "per_day": 3
+   },
+   "durations": [
+    {
+     "kind": "ongoing",
+     "source": "chronic condition"
+    }
+   ]
+  },
+  {
+   "name": "osteoarthritis or rheumatoid arthritis, 800 mg",
+   "source": "D&A: 400, 600 or 800 mg three or four times a day",
+   "strength": {
+    "value": 800,
+    "unit": "mg"
+   },
+   "dose_amount": {
+    "count": 1,
+    "form": "tablet"
+   },
+   "frequency": {
+    "per_day": 3
+   },
+   "durations": [
+    {
+     "kind": "ongoing",
+     "source": "chronic condition"
+    }
+   ]
+  }
+ ],
+ "food_timing": {
+  "value": {
+   "tags": [
+    "with_meals_or_milk"
+   ]
+  },
+  "source": "D&A: if stomach complaints occur, take with meals or milk"
+ },
+ "administration": null,
+ "interactions": {
+  "value": {
+   "items": [
+    {
+     "agent": "alcohol",
+     "rule": "limit"
+    }
+   ]
+  },
+  "source": "CHECK: Medication Guide lists drinking alcohol as a risk factor for stomach bleeding, not an explicit instruction"
+ },
+ "warning_signs": {
+  "value": {
+   "groups": [
+    {
+     "symptoms": [
+      "shortness of breath or trouble breathing",
+      "chest pain",
+      "weakness in one part or side of the body",
+      "slurred speech",
+      "swelling of the face or throat"
+     ],
+     "action": "emergency_help"
+    },
+    {
+     "symptoms": [
+      "vomiting blood",
+      "black, sticky or bloody stool",
+      "stomach pain or indigestion",
+      "yellow skin or eyes",
+      "skin rash or blisters with fever"
+     ],
+     "action": "stop_and_call_doctor_now"
+    }
+   ]
+  },
+  "source": "Medication Guide: get emergency help right away; stop taking and call your healthcare provider right away"
+ },
+ "missed_dose": null,
+ "max_daily": {
+  "value": {
+   "value": 3200,
+   "unit": "mg"
+  },
+  "source": "D&A: do not exceed 3200 mg total daily dose"
+ }
+}
